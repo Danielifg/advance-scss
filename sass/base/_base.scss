@@ -1,0 +1,23 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+/* 
+   all txt related elements inherit from font-size 
+   ex: in this case 1rem = 10px,
+   cause we define font-size = 10px for whole html,
+   this will adjust as for media queries
+   */
+html{
+      /* define root font-size from rem to follow
+         16px is default so we take it to calculate 
+         since we need 10px we do 10/16 = 62.5% */
+    font-size: 62.5%;  
+}
+
+body{
+    box-sizing: border-box;
+}

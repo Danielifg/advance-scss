@@ -1,0 +1,103 @@
+@import '_partial';
+
+* {
+    margin:0;
+    padding:0;
+  }
+  
+  // SASS vars
+  $color-primary: #f9ed69; //yellow
+  $color-secondary: blue; //yellow
+  $width-button: 150px;
+  $color-text-light:#eee;
+  $color-text-dark:black;
+
+
+  // SASS functions
+  @mixin clearfix {
+    &::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }
+// like ($col) => {} 
+ @mixin style-link-text($col) {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $col;
+ }
+
+// ($a, $b, $c) => {} 
+@function devide($a, $b){
+  @return($a / $b);
+}
+  nav{
+    @include clearfix;
+     // *1px:needed to specify they px's
+    margin: devide(60,2) * 1px; // <= ()
+    background-color: $color-primary;
+  }
+
+  %
+
+//nav::after also works
+  .clearfix::after{
+      content: "";
+      clear: both;
+      display: table;
+  }
+   // ** Nesting Selector **
+  .navigation{
+    list-style: none;
+    float: left;
+    li {
+        background-color: blueviolet;
+        &:first-child{ // = .navigation .li:first-child
+            margin:0;
+        }
+        a{
+            text-decoration: none;      
+            text-transform: uppercase;
+            color:   black;
+        }
+    }
+  }
+
+  .buttons{
+      float:right;
+  }
+
+  // define the @extend
+  // used when unherited and theme based
+%btn-placeholder{
+      padding:10px;
+      display: inline-block;
+      text-align: center;
+      border-radius: 100px;
+      text-decoration: none;
+      text-transform: uppercase;
+      width: $width-button;
+      color:$color-text-light;
+      @include style-link-text($color-text-light)
+  }
+   
+.btn-main{
+    &:link{
+      @extend %btn-placeholder; //;
+      background-color: $color-secondary;
+    }    
+    &:hover{
+      background-color: darken($color-secondary,5%)
+    }
+  }
+
+  .btn-hot{
+    &:link{
+      @extend %btn-placeholder; //;
+      background-color: palegreen;
+    }    
+    &:hover{
+      background-color: darken(blue,5%)
+    }
+  }
