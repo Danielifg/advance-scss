@@ -1,9 +1,9 @@
 .row {
     max-width: $grid-width;
-    background-color: #eee;
+    
     margin: 0 auto;
     font-size: 20px;
-    color: white;
+    
     // except last nth
     &:not(:last-child) {
         margin-bottom: $gutter-vertical;
@@ -15,7 +15,7 @@
     // $ : ends with
     [class^="col-"] {
         width: calc((100% - #{$gutter-horizontal}) / 2);
-        background-color: orangered;
+        
         float: left;
         &:not(:last-child) {
             margin-right: $gutter-horizontal;
