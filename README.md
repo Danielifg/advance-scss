@@ -1,4 +1,5 @@
-# Advance CSS-SASS styling course
+## Advance css-sass styling course
 
-## npm run compile:sass
+
 * https://danielifg.github.io/advance-css/
+  *  compile sass : `npm run compile:sass`
